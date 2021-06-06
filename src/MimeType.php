@@ -93,7 +93,8 @@ class MimeType
         'zip' => 'application/zip',
         '3gp' => 'video/3gpp',
         '3g2' => 'video/3gpp2',
-        '7z' => 'application/x-7z-compressed'
+        '7z' => 'application/x-7z-compressed',
+        'mp4' => 'video/mp4',
     ];
 
     /**
@@ -136,11 +137,9 @@ class MimeType
         if (isset($extension[1])) { // If a period exists in the filename
 
             return strtolower(strrev($extension[0]));
-
         }
 
         return '';
-
     }
 
     /**
@@ -172,11 +171,9 @@ class MimeType
         if (array_key_exists($extension, self::$mime_types)) {
 
             return self::$mime_types[$extension];
-
         }
 
         return $default;
-
     }
 
     /**
@@ -196,11 +193,8 @@ class MimeType
         if (array_key_exists($extension, self::$mime_types)) {
 
             return self::$mime_types[$extension];
-
         }
 
         return $default;
-
     }
-
 }
